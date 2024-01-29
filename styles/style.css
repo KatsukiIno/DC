@@ -1,0 +1,413 @@
+.svg-container {
+  position: relative;
+  width: 640px; /* SVGの幅に合わせて調整 */
+  height: 640px; /* SVGの高さに合わせて調整 */
+}
+.svg-container svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-hover:hover {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+/* #header {
+  box-sizing: border-box;
+  background: #ccc;
+  height: 50px;
+} */
+
+
+#main {
+  box-sizing: border-box;
+  margin-left: 350px;
+  padding: 20px 40px;
+}
+#sub {
+  box-sizing: border-box;
+  top: 0px;
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  overflow: auto;
+  background: #565656;
+  padding: 20px;
+  color: white;
+}
+
+.sample {
+  position: relative;
+  width: 640px;
+  height: 640px;
+}
+
+/* 全体マップへの戻るボタン */
+
+.sample .button-020, #returnBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: #2589d0;
+  position: fixed; /* or absolute */
+  left: 300px;
+  top: 150px; /* 適切な位置に調整 */
+  left: 310px;
+  z-index: 1; /* 他の要素より手前に表示 */
+}
+
+.sample .button-020:hover, #returnBtn:hover {
+  border: 1px solid #2589d0;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.sample .button-020:hover path, #returnBtn:hover path {
+  fill: #2589d0;
+}
+
+.sample .button-021 {
+  z-index: 1;
+  position: fixed;
+  left: 310px;
+  bottom: 100px;
+  display: block;
+}
+
+/* 階層ボタン */
+
+.verticalBtn { 
+  display: block;
+  width: 50px;
+  height: 30px;
+  font-size: 15px;
+  color: #565656;
+}
+
+.verticalBtn:hover {
+  background-color: #565656;
+  color: white;
+  cursor: pointer;  
+}
+
+.sub-items {
+  margin-top: 50px;  
+}
+
+details {
+  font:
+    20px "Open Sans",
+    Calibri,
+    sans-serif;
+  width: 100%;
+  color: white;
+  list-style: none;
+}
+
+summary {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+details[open] {
+  background-color: #565656;
+  color: white;
+}
+
+details > summary {
+  padding: 5px;
+  width: 100%;
+  border: none;
+  background: #565656;
+  cursor: pointer;
+}
+
+details > summary:hover {
+  background: #9e9e9e;
+}
+
+details > .Accordion_content > ul {
+  margin-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #565656;
+}
+
+details > .Accordion_content > ul > li::before {
+  content: '>'; /* 任意の記号を指定 */
+  margin-right: 5px; /* 記号とテキストの間隔 */
+}
+
+details > .Accordion_content > ul >li:hover {
+  background: #9e9e9e;
+  cursor: pointer;
+}
+
+/* 検索バーのスタイル */
+
+.search-form-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid #2589d0;
+  border-radius: 3px;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.search-form-1 input {
+  width: 100%;
+  height: 35px;
+  padding: 5px 15px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 1em;
+  outline: none;
+}
+
+.search-form-1 input::placeholder{
+  color: #777777;
+}
+
+.search-form-1 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 35px;
+  border: none;
+  background-color: #2589d0;
+  cursor: pointer;
+}
+
+.search-form-1 button:hover {
+  background-color: white;
+}
+
+.search-form-1 button::after {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  content: '';
+}
+
+
+.search-form-1 button:hover::after {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z' fill='%232589d0'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  content: '';
+}
+
+
+/* 左上にあるハンバーガーメニューにより出現するメニューのスタイル */
+
+.sidepanel {
+  box-sizing: border-box;
+  height: calc(100% - 0px);
+  width: 0;
+  position: fixed;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 60px;
+  transition: 0.5s;
+  filter: drop-shadow(2px 0px 6px #777);
+}
+
+.sidepanel #drawerClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: block;
+    padding: 20px;
+    cursor: pointer;
+}
+.lineClose {
+    display: inline-block;
+    vertical-align: middle;
+    color: #aaa;
+    line-height: 1;
+    width: 2.5rem;
+    height: 0.2rem;
+    background: currentColor;
+    border-radius: 0.1rem;
+    position: relative;
+    transform: rotate(45deg);
+    transition: 0.2s;
+}
+.lineClose::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  transform: rotate(90deg);
+}
+.sidepanel #drawerClose:hover > span {
+    color: #ddd;
+}
+
+/* 左上のハンバーガーメニューのスタイル */
+
+.openbtn {
+  position: fixed; /* 設置する位置を固定します */
+  top: 10px; /* 上から10pxの位置 */
+  left: 10px; /* 右から10pxの位置 */
+  z-index: 9999; /* 一番手前に表示 */
+  cursor: pointer; /* カーソルが上に来たらポインターに変身 */
+  width: 50px; /* 横幅５０px */
+  height: 50px; /* 縦幅５０px */
+  background-color: gainsboro; /* 四角の色 */
+}
+
+.openbtn:hover{
+  background-color: #666;
+}
+
+.openbtn:hover span {
+  background-color: gainsboro;
+}
+
+.openbtn span {
+  display: inline-block;
+  transition: all 0.4s; 
+  position: absolute; 
+  left: 14px; 
+  width: 45%; 
+  height: 3px; 
+  border-radius: 2px; 
+  background-color: #666; /* 線の色 */
+}
+
+.openbtn #openImage {
+  width: 50px;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z' fill='%23666'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.openbtn #openImage:hover {
+  width: 50px;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z' fill='%23dcdcdc'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.openbtn span:nth-of-type(1) {
+  top: 15px; /* １本目の線の四角い箱の上からの位置 */
+}
+.openbtn span:nth-of-type(2) {
+  top: 23px; /* ２本目の線の四角い箱の上からの位置 */
+}
+.openbtn span:nth-of-type(3) {
+  top: 31px; /* ３本目の線の四角い箱の上からの位置 */
+}
+
+
+/* 左から出現するサイドメニューのプラス，マイナス変化のスタイル */
+
+details summary {
+  position: relative;
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 16px;
+    height: 2px;
+    content: "";
+    background-color: currentColor;
+    right: 30px;
+  }
+  &::before {
+    transform: translateY(-50%);
+  }
+  &::after {
+    transition: transform 0.5s;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  
+  details[open]:not([data-accordion-before-close]) &::after {
+    transform: translateY(-50%);
+  }
+}
+
+
+/* 右から出現する施設説明のスタイル */
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.3);
+  z-index: 190;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease-in;
+}
+nav.nav {
+  width: 30%;
+  height: 100vh;
+  background-color: #FFF;
+  right: -30%;
+  top: 0;
+  position: fixed;
+  padding: 20px 0;
+  transition: all 200ms ease-in-out;
+  z-index: 199;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.logo  a{
+  text-decoration: none;
+  color: #888;
+  font-size: 2rem;
+}
+
+.show-nav .nav {
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.6);
+}
+
+#lower-background {
+  height: calc(100% - 0px);  
+  overflow: auto;
+}
+
+#searchResults {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.buildingDesc {
+  margin-left: 5px;
+  margin-right: 5px;
+}
