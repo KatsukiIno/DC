@@ -239,7 +239,7 @@ for (let i = 0; i < buildingsCount; i++) {
 // ローカルで起動して別ファイルから情報を取得
 // const filePath = 'http://localhost:3000/sample-1.txt';
 // githubの場合
-const filePath = 'https://raw.githubusercontent.com/KatsukiIno/DC/main/sample1.txt';
+const filePath = 'https://raw.githubusercontent.com/KatsukiIno/DC/main/sample-1.txt';
 const database = [];
 
 async function fetchData() {
