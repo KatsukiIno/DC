@@ -237,9 +237,9 @@ for (let i = 0; i < buildingsCount; i++) {
 // 仮のデータベースを配列で表現
 // const filePath = '../sample.txt';
 // ローカルで起動して別ファイルから情報を取得
-const filePath = 'http://localhost:3000/sample-1.txt';
+// const filePath = 'http://localhost:3000/sample-1.txt';
 // githubの場合
-// const filePath = 'https://raw.githubusercontent.com/KatsukiIno/map/main/sample.txt';
+const filePath = 'https://raw.githubusercontent.com/KatsukiIno/DC/main/sample1.txt';
 const database = [];
 
 async function fetchData() {
